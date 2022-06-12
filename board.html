@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dongguk Market</title>
+</head>
+<body>
+    <div>
+        <h1 style="display: inline-block"><a href="/">동국마켓</a></h1>
+    </div> 
+    <!-- <div>{{value}}님</div> -->
+
+    <div>
+        <h1>상품 정보를 입력해주세요</h1>
+        <form action="/add" method="POST">
+            제목
+            <br>
+            <input type="text" name="title">
+            <br><br>
+            상세정보
+            <br>
+            <textarea name="context" cols="40" rows="10"></textarea>
+            <br>
+            키워드
+            <br>
+            <input type="text" name="keyword">
+            <br>
+
+            <input type = "submit" value = "등록하기"><br>
+        </form>
+        <h4>BOARD</h4>
+        <table class="table" style = "word-break:break-all" style="table-layout: fixed">
+            <thread>
+                <th>#</th>
+                <th>제목</th>
+                <th>상세정보</th>
+                <th>키워드</th>
+            </thread>
+            {% for row in rows %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dongguk Market</title>
+</head>
+<body onload="init()">
+    <div>
+        <h1 style="display: inline-block"><a href="/">동국마켓</a></h1>
+    </div> 
+    <form action="" method="post">
+        <p>
+            <input type="button" value="POST" onclick="location.href='board'">
+        </p>
+        <p>
+            <input type="button" value="LOGOUT" onclick="location.href='/logout'">
+        </p>
+    </form>
+
+    <table class="table" style = "word-break:break-all" style="table-layout: fixed">
+        <thread>
+            <th>#</th>
+            <th>제목</th>
+            <th>상세정보</th>
+            <th>키워드</th>
+        </thread>
+        {% for row in rows %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
